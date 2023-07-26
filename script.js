@@ -3,6 +3,7 @@ let targetNumber;
 let attempts = 0;
 let selectedGame = 1;
 
+
 function newGameGuessNumber() {
   targetNumber = Math.floor(Math.random() * 100) + 1;
   attempts = 0;
@@ -45,7 +46,7 @@ function newGameRockPaperScissors() {
 }
 
 function newGameDiceRoll() {
-  targetNumber = Math.floor(Math.random() * 6) + Math.floor(Math.random() * 6) + 2; 
+  targetNumber = Math.floor(Math.random() * 6) + Math.floor(Math.random() * 6) + 2;
   attempts = 0;
   document.getElementById('result').innerHTML = '';
   document.getElementById('guessInput').value = '';
@@ -53,7 +54,7 @@ function newGameDiceRoll() {
 }
 
 function newGameCoinToss() {
-  targetNumber = Math.floor(Math.random() * 2); 
+  targetNumber = Math.floor(Math.random() * 2);
   attempts = 0;
   document.getElementById('result').innerHTML = '';
   document.getElementById('guessInput').value = '';
@@ -75,10 +76,12 @@ function newGameNumberMemory() {
     document.getElementById('result').innerHTML = 'Enter the sequence (e.g., 1 2 3 4 5):';
     targetNumber = sequence;
   }, 2000); 
+}
 
 function jumbleWord(word) {
   const jumbledWord = word.split('').sort(() => Math.random() - 0.5).join('');
   return jumbledWord !== word ? jumbledWord : jumbleWord(word); 
+}
 
 function newGameWordJumble() {
   const words = ['apple', 'banana', 'orange', 'grape', 'kiwi'];
@@ -98,6 +101,7 @@ function newGameAnagram() {
   document.getElementById('guessInput').value = '';
   document.getElementById('result').innerHTML = `Enter an anagram of the word: ${words[targetNumber]}`;
 }
+
 
 function checkGuessGuessNumber() {
   const guess = parseInt(document.getElementById('guessInput').value);
@@ -279,6 +283,8 @@ function selectGame(gameNumber) {
   });
   updateGameContainer();
 }
+
+
 
 function updateGameContainer() {
   const gameContents = document.querySelectorAll('.game-content');
@@ -628,6 +634,8 @@ function newGameAnagram() {
   document.querySelector('#game10Content .submit-button').onclick = checkGuessAnagram;
 }
 
+
+
 // Game 11: Math Quiz
 function newGameMathQuiz() {
   const firstNumber = Math.floor(Math.random() * 10) + 1;
@@ -699,7 +707,7 @@ function newGameTicTacToe() {
 
     if (!board.includes('')) {
       displayResult("It's a tie!");
-      document.querySelector('#game12Content').style.pointerEvents = 'none';
+      document.querySelector('#game12Content').style.pointerEvents = 'none'; 
     }
   }
 
@@ -722,6 +730,8 @@ function newGameTicTacToe() {
     cell.addEventListener('click', handleCellClickTicTacToe);
   });
 }
+
+
 
 // Game 13: Hangman
 function newGameHangman() {
@@ -867,6 +877,7 @@ function newGameSudoku() {
     [0, 0, 0, 0, 8, 0, 0, 7, 9]
   ];
 
+
   displayBoardSudoku();
 
   function displayBoardSudoku() {
@@ -887,6 +898,7 @@ function newGameSudoku() {
       boardElement.appendChild(rowElement);
     }
   }
+
 
 }
 
@@ -1130,7 +1142,10 @@ function newGameMazeEscape() {
   let maze = createMaze();
 
   function createMaze() {
+
+
     const maze = Array.from({ length: ROWS }, () => Array(COLS).fill(0));
+
 
     maze[0][2] = 1;
     maze[1][2] = 1;
@@ -1174,6 +1189,7 @@ function newGameMazeEscape() {
     }
   }
 
+ 
   function movePlayer(row, col) {
     maze[row][col] = 2;
 
@@ -1202,6 +1218,7 @@ function newGameMazeEscape() {
     displayMazeEscape();
   }
 
+
   movePlayer(START_ROW, START_COL);
 }
 
@@ -1213,8 +1230,5 @@ function newGameSpaceInvaders() {
 
 
 
-
-
-
-  
+// Start a new game when the page loads
 window.onload = updateGameContainer;
