@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Game Selection</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="game-selection-container">
+    <h2>Game Selection</h2>
+    <ul class="game-list">
+      <li onclick="selectGame(1)" class="active">Game 1: Guess Number</li>
+      <li onclick="selectGame(2)">Game 2: Even/Odd</li>
+      <li onclick="selectGame(3)">Game 3: Higher/Lower</li>
+      <li onclick="selectGame(4)">Game 4: Color Guess</li>
+      <li onclick="selectGame(5)">Game 5: Rock-Paper-Scissors</li>
+      <li onclick="selectGame(6)">Game 6: Dice Roll</li>
+      <li onclick="selectGame(7)">Game 7: Coin Toss</li>
+      <li onclick="selectGame(8)">Game 8: Number Memory</li>
+      <li onclick="selectGame(9)">Game 9: Word Jumble</li>
+      <li onclick="selectGame(10)">Game 10: Anagram</li>
+    </ul>
+  </div>
+
+  <div class="game-container" id="gameContainer">
+    <h3 class="game-title">Game 1: Guess Number</h3>
+    <div class="game-content" id="game1Content">
+      <p class="game-description">Guess a number between 1 and 100:</p>
+      <input type="number" class="guessInput input-field">
+      <button onclick="checkGuessGuessNumber()" class="submit-button">Submit Guess</button>
+    </div>
+
+    <div class="game-content" id="game2Content" style="display: none;">
+      <h3 class="game-title">Even/Odd</h3>
+      <div>
+        <p class="game-description">Is the number even or odd?</p>
+        <input type="text" class="guessInput input-field">
+        <button onclick="checkGuessEvenOdd()" class="submit-button">Submit Guess</button>
+      </div>
+    </div>
+
+    <div class="game-content" id="game3Content" style="display: none;">
+      <h3 class="game-title">Higher/Lower</h3>
+      <div>
+        <p class="game-description">Is the next number higher or lower than the current one?</p>
+        <button onclick="checkGuessHigherLower('higher')" class="submit-button">Higher</button>
+        <button onclick="checkGuessHigherLower('lower')" class="submit-button">Lower</button>
+      </div>
+    </div>
+
+    <div class="game-content" id="game4Content" style="display: none;">
+      <h3 class="game-title">Color Guess</h3>
+      <div>
+        <p class="game-description">Guess the color:</p>
+        <input type="text" class="guessInput input-field">
+        <button onclick="checkGuessColorGuess()" class="submit-button">Submit Guess</button>
+      </div>
+    </div>
+
+    <div class="game-content" id="game5Content" style="display: none;">
+      <h3 class="game-title">Rock-Paper-Scissors</h3>
+      <div>
+        <p class="game-description">Choose: Rock, Paper, or Scissors</p>
+        <input type="text" class="guessInput input-field">
+        <button onclick="checkGuessRockPaperScissors()" class="submit-button">Submit Guess</button>
+      </div>
+    </div>
+
+    <div class="game-content" id="game6Content" style="display: none;">
+      <h3 class="game-title">Dice Roll</h3>
+      <div>
+        <p class="game-description">Guess the sum of two dice rolls (2-12)</p>
+        <input type="number" class="guessInput input-field">
+        <button onclick="checkGuessDiceRoll()" class="submit-button">Submit Guess</button>
+      </div>
+    </div>
+
+    <div class="game-content" id="game7Content" style="display: none;">
+      <h3 class="game-title">Coin Toss</h3>
+      <div>
+        <p class="game-description">Heads or Tails?</p>
+        <input type="text" class="guessInput input-field">
+        <button onclick="checkGuessCoinToss()" class="submit-button">Submit Guess</button>
+      </div>
+    </div>
+
+    <div class="game-content" id="game8Content" style="display: none;">
+      <h3 class="game-title">Number Memory</h3>
+      <div>
+        <p class="game-description">Memorize the sequence:</p>
+        <p class="result-text">Sequence will be shown for 2 seconds</p>
+        <p id="sequence" class="result-text"></p>
+        <input type="text" class="guessInput input-field">
+        <button onclick="checkGuessNumberMemory()" class="submit-button">Submit Guess</button>
+      </div>
+    </div>
+
+    <div class="game-content" id="game9Content" style="display: none;">
+      <h3 class="game-title">Word Jumble</h3>
+      <div>
+        <p class="game-description">Unscramble the word:</p>
+        <input type="text" class="guessInput input-field">
+        <button onclick="checkGuessWordJumble()" class="submit-button">Submit Guess</button>
+      </div>
+    </div>
+
+    <div class="game-content" id="game10Content" style="display: none;">
+      <h3 class="game-title">Anagram</h3>
+      <div>
+        <p class="game-description">Enter an anagram of the word:</p>
+        <input type="text" class="guessInput input-field">
+        <button onclick="checkGuessAnagram()" class="submit-button">Submit Guess</button>
+      </div>
+    </div>
+  </div>
+
+  <p id="result" class="result-text"></p>
+
+  <script src="script.js"></script>
+</body>
+</html>
