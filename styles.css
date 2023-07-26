@@ -39,7 +39,7 @@ h2 {
 }
 
 .game-title {
-  display: none;
+  display: none; /* Hide game titles initially */
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   font-size: 28px;
   font-weight: bold;
@@ -51,6 +51,7 @@ h2 {
   display: none;
 }
 
+/* Add a background image for the game selection title */
 .game-selection-title {
   background-image: url("your-background-image.jpg");
   background-size: cover;
@@ -58,6 +59,7 @@ h2 {
   padding: 50px;
 }
 
+/* Style the game selection title text */
 .game-selection-title h1 {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   font-size: 48px;
